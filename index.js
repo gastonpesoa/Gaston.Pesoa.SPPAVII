@@ -6,6 +6,7 @@ const { handlerNotFound, handlerError, logger } = require('./utils/middleware')
 const loginRouter = require('./routes/LoginRouter')
 const usersRouter = require('./routes/usersRouter')
 const mascotasRouter = require('./routes/mascotasRouter')
+const tiposRouter = require('./routes/tiposRouter')
 
 const app = express()
 app.use(cors())
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 app.use('/api/login', loginRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/mascotas', mascotasRouter)
+app.use('/api/tipos', tiposRouter)
 
 app.use(handlerNotFound)
 app.use(handlerError)
